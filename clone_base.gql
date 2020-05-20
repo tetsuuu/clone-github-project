@@ -1,0 +1,24 @@
+{   
+    "variables" : {
+        "name" : "projectTitle",
+        "body" : "projectBody",
+        "sourceId" : "prevProjectId"
+        "ownerId" : "projectOwnerId"
+    },
+    "query": "mutation($name:String!,$body:String!,$sourceId:String!,$ownerId:String!){
+        cloneProject(input:{
+            body:$body,
+            name:$name,
+            sourceId:$sourceId,
+            targetOwnerId:$ownerId,
+            includeWorkflows:true
+        })
+        {
+            project {
+                state
+                name
+                body
+            }
+        }
+    }"
+}
