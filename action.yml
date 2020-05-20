@@ -1,0 +1,16 @@
+name: 'GitHub Project Board Cloner'
+description: 'GitHub Project boards clone with cards in column'
+author: 'tetsuuu <tkinoshita29@gmail.com>'
+inputs:
+  repo-token:
+    description: 'The REPO_TOKEN secret can be passed in using {{ secrets.REPO_TOKEN }}'
+    required: true
+  project-prefix:
+    description: 'The name of the GitHub Project prefix'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'activity'
+  color: 'blue'
