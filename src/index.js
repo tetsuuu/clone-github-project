@@ -32,7 +32,7 @@ const generateProjectMutation = require('./generate_project_mutation');
         console.log('prevProject : ' + prevProject);
 
         console.log('await octokit.graphql(prevProject)');
-        const {originData} = await octokit.graphql(prevProject);
+        const originData = await octokit.graphql(prevProject);
 
         console.log('JSON.stringify(originData)');
         debug(JSON.stringify(originData));
@@ -44,7 +44,7 @@ const generateProjectMutation = require('./generate_project_mutation');
         const date = moment();
         const startDate = date.add(4, 'day').format('MM/DD');
         const endDate = date.add(9, 'day').format('MM/DD');
-        const body = startDate + endDate;
+        const body = startDate + '-' + endDate;
 
         console.log('body is ' + body);
 
