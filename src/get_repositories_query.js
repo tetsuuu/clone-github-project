@@ -34,4 +34,4 @@ const getRepositoriesQuery = (project, repoName, owner) => (
     }`
 );
     
-export default getRepositoriesQuery;
+module.exports = getRepositoriesQuery;

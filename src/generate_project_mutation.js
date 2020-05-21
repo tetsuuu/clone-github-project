@@ -26,4 +26,4 @@ const projectMutation = (body, name, id, ownerId) => (
     }`
 );
 
-export default projectMutation;
+module.exports = projectMutation;
