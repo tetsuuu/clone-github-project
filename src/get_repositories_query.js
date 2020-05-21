@@ -8,7 +8,7 @@
 const getRepositoriesQuery = (project, repoName, owner) => (
     `query {
         repository(owner:"${owner}", name:"${repoName}") {
-            projects(last:1, states:OPEN, search:"${project}", orderBy: {field:CREATED_AT, direction: ASC}) {
+            projects(last:1, states:OPEN, search:"${project}", orderBy: {field:CREATED_AT, direction: DESC}) {
                 nodes {
                     name
                     id

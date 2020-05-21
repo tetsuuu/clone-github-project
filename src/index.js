@@ -44,7 +44,7 @@ const generateProjectMutation = require('./generate_project_mutation');
 
         const date = moment();
         const startDate = date.add(4, 'day').format('MM/DD');
-        const endDate = date.add(9, 'day').format('MM/DD');
+        const endDate = date.add(4, 'day').format('MM/DD');
         const body = startDate + ' - ' + endDate;
 
         console.log('body is ' + body);
@@ -53,7 +53,7 @@ const generateProjectMutation = require('./generate_project_mutation');
         console.log('prevPrj Title is ' + prevName);
         const prevNum = originData.repository.projects.nodes.name.replace(/[^0-9]/g, '');
         const number = int(prevNum) + 1;
-        const name = `Openβ ${number}th batch`;
+        const name = `Openβ ${number}th batch`; 
 
         console.log('name is ' + name);
 
