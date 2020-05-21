@@ -24,12 +24,16 @@ const generateProjectMutation = require('./generate_project_mutation');
         const octokit = new GitHub(token);
         
         // Get repository infomation from context
+        console.log('Get repository infomation from context');
 		const prevProject = getRepositoriesQuery(project, repoName, owner);
 
+        console.log('debug(prevProject)');
         debug(prevProject);
 
+        console.log('await octokit.graphql(prevProject)');
         const {originData} = await octokit.graphql(prevProject);
 
+        console.log('JSON.stringify(originData)');
         debug(JSON.stringify(originData));
 
         // Generate Project board cloning mutation query from preview project
