@@ -32,10 +32,10 @@ const generateProjectMutation = require('./generate_project_mutation');
         console.log('prevProject : ' + prevProject);
 
         console.log('await octokit.graphql(prevProject)');
-        const originData = await octokit.graphql(prevProject);
+        const returnData = await octokit.graphql(prevProject);
 
         console.log('JSON.stringify(originData)');
-        debug(JSON.stringify(originData));
+        const originData = JSON.stringify(returnData);
         console.log('originData : ' + JSON.stringify(originData));
 
         // Generate Project board cloning mutation query from preview project
