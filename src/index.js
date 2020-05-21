@@ -1,5 +1,5 @@
 const { getInput, debug, setFailed } = require('@actions/core');
-const { context, GitHub } = require('@actions/github');
+const github = require('@actions/github');
 const { moment } = require('moment');
 
 const getRepositoriesQuery = require('./get_repositories_query');
@@ -8,7 +8,7 @@ const generateProjectMutation = require('./generate_project_mutation');
 (async () => {
 	try {
         console.log('first step');
-        console.log(context);
+        console.log(github.context);
 		const token = getInput('repo-token');
 		const project = getInput('project-prefix');
 		const repoName = getInput('repo-name');
@@ -21,7 +21,7 @@ const generateProjectMutation = require('./generate_project_mutation');
 
         // Create a method to query GitHub        
         console.log('second step');
-        const octokit = new GitHub(token);
+        const octokit = new github.GitHub(token);
         
         // Get repository infomation from context
         console.log('Get repository infomation from context');
