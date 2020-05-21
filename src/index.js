@@ -7,13 +7,20 @@ const generateProjectMutation = require('./generate_project_mutation');
 
 (async () => {
 	try {
+        console.log('first step');
         console.log(context);
 		const token = getInput('repo-token');
 		const project = getInput('project-prefix');
 		const repoName = getInput('repo-name');
 		const owner = getInput('owner');
+        console.log('input values');
+		console.log('token is ' + token);
+		console.log('project is ' + project);
+		console.log('repoName is ' + repoName);
+		console.log('owner is ' + owner);
 
-		// Create a method to query GitHub
+        // Create a method to query GitHub        
+        console.log('second step');
         const octokit = new GitHub(token);
         
         // Get repository infomation from context
