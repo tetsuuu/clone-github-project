@@ -1,7 +1,7 @@
 /**
  * Return to repository data { body, name, sourceId, targetOwnerId }
  * リポジトリ情報を返す { body, name, sourceId, targetOwnerId }
- * @param {object} githubContext - The current repository data
+ * @param {any} githubContext - The current repository data
  * @param {string} project - The origin project board name prefix
  */
 const getRepositoriesQuery = (githubContext, project) => {
