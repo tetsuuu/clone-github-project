@@ -4,7 +4,7 @@
  * @param {object} githubContext - The current repository data
  * @param {string} project - The origin project board name prefix
  */
-const getRepositoriesQuery = (project) => {
+const getRepositoriesQuery = (githubContext, project) => {
     const repoName = githubContext.repository;
     const repoOwner = githubContext.repository_owner;
     const projectInfo = (

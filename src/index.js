@@ -7,7 +7,7 @@ const generateProjectMutation = require('./generate_project_mutation');
 
 (async () => {
 	try {
-        console.log('Start Job');
+        console.log(context);
 		const token = getInput('repo-token');
 		const project = getInput('project-prefix');
 
