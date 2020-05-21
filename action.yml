@@ -8,6 +8,12 @@ inputs:
   project-prefix:
     description: 'The name of the GitHub Project prefix'
     required: true
+  repo-name:
+    description: 'The name of repository'
+    required: true
+  owner:
+    description: 'The name of repository owner'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
