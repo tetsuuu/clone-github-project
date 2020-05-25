@@ -38,7 +38,7 @@ const generateProjectMutation = require('./generate_project_mutation');
 
         console.log('originData');
         console.log('originData : '  + JSON.stringify(repository));
-        console.log('originData.repository.projects.nodes : '  + repository.projects.nodes);
+        console.log('originData.repository.projects.nodes : '  + repository['projects']);
 
         // Generate Project board cloning mutation query from preview project
         console.log('third step');
