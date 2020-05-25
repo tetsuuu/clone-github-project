@@ -32,13 +32,13 @@ const generateProjectMutation = require('./generate_project_mutation');
         console.log('prevProject : ' + prevProject);
 
         console.log('await octokit.graphql(prevProject)');
-        const {data} = await octokit.graphql(prevProject);
-        console.log(data);
+        const {repository} = await octokit.graphql(prevProject);
+        console.log('JSON.parse');
         // const originData = JSON.stringify(returenData);
 
         console.log('originData');
-        console.log('originData : '  + data);
-        console.log('originData.repository.projects.nodes : '  + data.repository.projects);
+        console.log('originData : '  + repository);
+        console.log('originData.repository.projects.nodes : '  + repository.projects);
 
         // Generate Project board cloning mutation query from preview project
         console.log('third step');
@@ -50,16 +50,16 @@ const generateProjectMutation = require('./generate_project_mutation');
 
         console.log('body is ' + body);
 
-        const prevName = data.repository.projects.nodes.name;
+        const prevName = repository.projects.nodes.name;
         console.log('prevPrj Title is ' + prevName);
-        const prevNum = data.repository.projects.nodes.name.replace(/[^0-9]/g, '');
+        const prevNum = repository.projects.nodes.name.replace(/[^0-9]/g, '');
         const number = int(prevNum) + 1;
         const name = `Openβ ${number}th batch`; 
 
         console.log('name is ' + name);
 
-        const id = data.repository.projects.nodes.id;
-        const ownerId = data.repository.projects.nodes.owner.id;
+        const id = repository.projects.nodes.id;
+        const ownerId = repository.projects.nodes.owner.id;
         console.log('id is ' + id);
         console.log('ownerId is ' + ownerId);
 
