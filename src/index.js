@@ -50,16 +50,16 @@ const generateProjectMutation = require('./generate_project_mutation');
 
         console.log('body is ' + body);
 
-        const prevName = originData.repository.projects.nodes.name;
+        const prevName = repository.projects.nodes.name;
         console.log('prevPrj Title is ' + prevName);
-        const prevNum = originData.repository.projects.nodes.name.replace(/[^0-9]/g, '');
+        const prevNum = repository.projects.nodes.name.replace(/[^0-9]/g, '');
         const number = int(prevNum) + 1;
         const name = `Openβ ${number}th batch`; 
 
         console.log('name is ' + name);
 
-        const id = originData.data.repository.projects.nodes.id;
-        const ownerId = originData.data.repository.projects.nodes.owner.id;
+        const id = repository.projects.nodes.id;
+        const ownerId = repository.projects.nodes.owner.id;
         console.log('id is ' + id);
         console.log('ownerId is ' + ownerId);
 
