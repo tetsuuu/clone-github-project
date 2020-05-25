@@ -32,9 +32,9 @@ const generateProjectMutation = require('./generate_project_mutation');
         console.log('prevProject : ' + prevProject);
 
         console.log('await octokit.graphql(prevProject)');
-        const {returenData} = await octokit.graphql(prevProject);
+        const {originData} = await octokit.graphql(prevProject);
         console.log('JSON.parse');
-        const originData = JSON.stringify(returenData);
+        // const originData = JSON.stringify(returenData);
 
         console.log('originData');
         console.log('originData : '  + originData);
